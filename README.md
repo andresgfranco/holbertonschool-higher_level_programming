@@ -1,7 +1,9 @@
 # Learning Objectives
+
 - At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
 # General
+
 - Why Python programming is awesome
 - Who created Python
 - Who is Guido van Rossum
@@ -12,15 +14,17 @@
 - How to use strings
 - What are indexing and slicing in Python
 - What is the official Holberton Python coding style and how to check your code with PEP 8
+
 # Requirements
-- Python Scripts
+
+## Python Scripts
 - Allowed editors: vi, vim, emacs
 - All your files will be interpreted/compiled on Ubuntu 14.04 LTS using python3 (version 3.4.3)
 - All your files should end with a new line
 - The first line of all your files should be exactly #!/usr/bin/python3
 - A README.md file at the root of the holbertonschool-higher_level_programming repo, containing a description of the repository
 - A README.md file, at the root of the folder of this project, is mandatory
-- Your code should use the PEP 8 style (version 1.7.*)
+- Your code should use the PEP 8 style (version 1.7.\*)
 - All your files must be executable
 - The length of your files will be tested using wc
 - Shell Scripts
@@ -30,7 +34,9 @@
 - All your files should end with a new line
 - The first line of all your files should be exactly #!/bin/bash
 - All your files must be executable
-# C Scripts
+
+## C Scripts
+
 - Allowed editors: vi, vim, emacs
 - All your files will be compiled on Ubuntu 14.04 LTS
 - Your programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
@@ -42,8 +48,10 @@
 - The prototypes of all your functions should be included in your header file called lists.h
 - Don’t forget to push your header file
 - All your header files should be include guarded
+
 # More Info
-'Zen
+
+```Zen
 The Zen of Python, by Tim Peters
 
 Beautiful is better than ugly.
@@ -61,7 +69,7 @@ In the face of ambiguity, refuse the temptation to guess.
 There should be one-- and preferably only one --obvious way to do it.
 Although that way may not be obvious at first unless you're Dutch.
 Now is better than never.
-Although never is often better than *right* now.
+Although never is often better than _right_ now.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let's do more of those!'
+Namespaces are one honking great idea -- let's do more of those!```
