@@ -6,12 +6,13 @@ Module for divide function
 
 def matrix_divided(matrix, div):
     '''Function that divides all elements of a matrix '''
+
     # matrix evaluation #
     Error_string = "matrix must be a matrix (list of lists) of integers/floats"
     if type(matrix) != list:
         raise TypeError(Error_string)
 
-    if len(matrix) < 2:
+    if len(matrix) < 1:
         raise TypeError(Error_string)
 
     if not (all(isinstance(element, list) for element in matrix)):
