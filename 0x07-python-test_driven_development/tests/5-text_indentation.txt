@@ -1,0 +1,96 @@
+Testing function ```text_indentation```
+____________________________________________
+
+This function prints a text with 2 new lines
+after each of these characters: '., ?, :'
+(dot, question mark, colon)
+--------------------------------------------
+
+Import the function:
+       >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Testing if no arguments passed:
+	>>> text_indentation()
+	Traceback (most recent call last):
+	...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Testing more than one argument:
+	>>> text_indentation("You can't", "do this")
+	Traceback (most recent call last):
+	...
+	TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+Testing non-string type passed:
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+	>>> text_indentation(2020)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+	>>> text_indentation([2021, 2022])
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+	>>> text_indentation(('well', 'not', 56))
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+	>>> text_indentation({ id: "007" })
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+Testing Non-special characters:
+	>>> text_indentation("I have been thinking operator, do not choose that")
+	I have been thinking operator, do not choose that
+	>>> text_indentation("")
+
+Testing Regular text:
+	>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres")
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	<BLANKLINE>
+	Quonam modo?
+	<BLANKLINE>
+	Utrum igitur tibi litteram videor an totas paginas commovere?
+	<BLANKLINE>
+	Non autem hoc:
+	<BLANKLINE>
+	igitur ne illud quidem.
+	<BLANKLINE>
+	Fortasse id optimum, sed ubi illud:
+	<BLANKLINE>
+	Plus semper voluptatis?
+	<BLANKLINE>
+	Teneo, inquit, finem illi videri nihil dolere.
+	<BLANKLINE>
+	Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+	<BLANKLINE>
+	Si id dicis, vicimus.
+	<BLANKLINE>
+	Inde sermone vario sex illa a Dipylo stadia confecimus.
+	<BLANKLINE>
+	Sin aliud quid voles, postea.
+	<BLANKLINE>
+	Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+	<BLANKLINE>
+	Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
+	>>> text_indentation("And so it begins")
+	And so it begins
+	>>> text_indentation("Nice")
+	Nice
+
+Testing text ending in specaial character:
+	>>> text_indentation("But I did not listenned.")
+	But I did not listenned.
+	<BLANKLINE>
+
+Testing Multiple spaces:
+	>>> text_indentation("And then.    All failed:    yeah   , It did")
+	And then.
+	<BLANKLINE>
+	All failed:
+	<BLANKLINE>
+	yeah   , It did
