@@ -94,3 +94,9 @@ Testing Multiple spaces:
 	All failed:
 	<BLANKLINE>
 	yeah   , It did
+
+Testing Holberton.School:
+	>>> text_indentation("Holberton.School")
+	Holberton.
+	<BLANKLINE>
+	School
