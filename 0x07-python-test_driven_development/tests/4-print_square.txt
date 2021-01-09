@@ -1,0 +1,90 @@
+>>> print_square = __import__('4-print_square').print_square
+
+1.Check that the file is executable
+>>> import os
+>>> os.access('4-print_square.py', os.X_OK)
+True
+
+2.Check coments of the functions
+
+>>> len(__import__("4-print_square").__doc__) > 10
+True
+
+3.Check for the documentation of the function
+
+>>> len(__import__("4-print_square").print_square.__doc__) > 10
+True
+
+4.Check for a newline at the end of the file
+>>> os.popen("cat -e 4-print_square.py | tail -1").read()[-1]
+'\n'
+
+5.Check for pep8 style
+>>> os.popen("pep8 4-print_square.py").read()
+''
+
+6.Check receive a string
+>>> print_square("Hello")
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+7.Check recieve a list
+>>> print_square([1, 2, 3])
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+ 
+8.Check recieve a negative number
+>>> print_square(-2)
+Traceback (most recent call last):
+	...
+TypeError: size must be >= 0
+
+9.Check recieve a None
+>>> print_square(None)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+10.Check no arguments
+>>> print_square()
+Traceback (most recent call last):
+	...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+11.Check floats
+>>> print_square(7.77)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+12.Check floats negative
+>>> print_square(-7.77)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+13.Check True
+>>> print_square(True)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+14.Check False
+>>> print_square(False)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+15.Check Infinte
+>>> print_square(float('inf'))
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+16.Check NAN
+>>> print_square(float('nan'))
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
