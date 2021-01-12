@@ -6,5 +6,5 @@ Rectangle that defines a rectangle
 
 
 class Rectangle():
-  '''Empty class Rectangle'''
-  pass
+    '''Empty class Rectangle'''
+    pass
