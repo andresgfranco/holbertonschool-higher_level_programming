@@ -1,21 +1,6 @@
 #!/usr/bin/python3
 '''Module for Rectangle class'''
-
-
-class BaseGeometry():
-    '''class BaseGeometry'''
-
-    def area(self):
-        '''Method to calculate area'''
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        '''function to validate if is an integer
-        or not'''
-        if type(value) != int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+BaseGeometry = _import_('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
