@@ -6,4 +6,4 @@ class MyList(list):
     '''Class that inherits from list'''
     def print_sorted(self):
         '''Method to print a list of sorted integers'''
-        return sorted(self)
+        print(sorted(self))
