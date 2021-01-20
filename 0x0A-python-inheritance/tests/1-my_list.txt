@@ -1,25 +1,97 @@
->>> MyList = __import__('1-my_list').MyList
->>> my_list = MyList()
->>> print(my_list)
-[]
->>> my_list.print_sorted()
-[]
->>> my_list.append(1)
->>> my_list.append(4)
->>> my_list.append(2)
->>> my_list.append(3)
->>> my_list.append(5)
->>> print(my_list)
-[1, 4, 2, 3, 5]
->>> my_list.print_sorted()
-[1, 2, 3, 4, 5]
->>> print(my_list) #check sort vs sorted
-[1, 4, 2, 3, 5]
->>> my_list.append(-5)
->>> my_list.append(0)
->>> print(my_list)
-[1, 4, 2, 3, 5, -5, 0]
->>> my_list.print_sorted()
-[-5, 0, 1, 2, 3, 4, 5]
->>> print(my_list)
-[1, 4, 2, 3, 5, -5, 0]
+The ``1-my_list`` module - Thanks to Diego Lopez, Andy Lopez and Nico from Bogota
+============================
+
+     ####################################################################
+     #                                                                  #
+     #   Import os for testing contents of the file e.g.,               #
+     #                                                                  #
+     #     >>>os.popen('cat -e 1-my_list.py | tail -1').read()[-1]      #
+     #     '\n'                                                         #
+     #                                                                  #
+     ####################################################################
+    >>> import os
+
+    ### Import MyList.print_sorted from 1-my_list module.
+    >>> MyList = __import__('1-my_list').MyList
+
+
+    #--------------------------- Requirement tests ---------------------------#
+
+    ### Module documentation.
+    >>> len('1-my_list'.__doc__) > 10
+    True
+
+    ### Function documentation.
+    >>> len(MyList.print_sorted.__doc__) > 10
+    True
+
+    ### New line at the end of the file.
+    >>> os.popen('cat -e 1-my_list.py | tail -1').read()[-1]
+    '\n'
+
+    ### File contains the proper shebang.
+    >>> os.popen('cat 1-my_list.py | head -1').read()
+    '#!/usr/bin/python3\n'
+
+    ### No error from pep8
+    >>> os.popen("pep8 1-my_list.py").read()
+    ''
+
+    ### Executable file permissions.
+    >>> import os
+    >>> os.access('1-my_list.py', os.X_OK)
+    True
+
+    ### README exists on current directory.
+    >>> cwd = os.getcwd()
+    >>> path = cwd + '/README.md'
+    >>> os.path.exists(path)
+    True
+
+
+    #--------------------Andy cases(thanks bro)--------------------
+    >>> MyList = __import__('1-my_list').MyList
+    >>> my_list = MyList()
+    >>> print(my_list)
+    []
+    >>> my_list.print_sorted()
+    []
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+    >>> print(my_list) #check sort vs sorted
+    [1, 4, 2, 3, 5]
+
+    >>> my_list.append(-5)
+
+    >>> my_list.append(0)
+
+    >>> print(my_list)
+    [1, 4, 2, 3, 5, -5, 0]
+
+    >>> my_list.print_sorted()
+    [-5, 0, 1, 2, 3, 4, 5]
+
+    >>> print(my_list)
+    [1, 4, 2, 3, 5, -5, 0]
+
+    #--------------------Nico cases(thanks bro)--------------------
+    __import__('1-my_list').__doc__ != None
+    True
+
+    >>> MyList = __import__('1-my_list').MyList
+
+    >>> MyList.__doc__ != None
+    True
+
+    >>> my_list = MyList()
+    >>> print(my_list)
