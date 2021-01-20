@@ -95,3 +95,6 @@ The ``1-my_list`` module - Thanks to Diego Lopez, Andy Lopez and Nico from Bogot
 
     >>> my_list = MyList()
     >>> print(my_list)
+    []
+    >>> my_list.print_sorted()
+    []
