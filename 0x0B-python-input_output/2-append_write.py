@@ -3,6 +3,7 @@
 
 
 def append_write(filename="", text=""):
+    '''Method to append a text'''
     with open(filename, 'a', encoding='utf-8') as filename:
         filename.write(text)
     return len(text)
