@@ -1,98 +1,25 @@
-    >>> MyList = __import__('1-my_list').MyList
-
-    ---- Check that the file is executable ----
-    >>> import os
-    >>> os.access('1-my_list.py', os.X_OK)
-    True
-
-    ---- Check for the documentation of the module ----
-    >>> len(__import__("1-my_list").__doc__) > 10
-    True
-
-    ---- Check for the documentation of the function ----
-    >>> len(__import__("1-my_list").MyList.__doc__) > 10
-    True
-
-    ---- Check for pep8 style ----
-    >>> os.popen("pep8 1-my_list.py").read()
-    ''
-
-    ---- Check for a newline at the end of the file ----
-    >>> os.popen("cat -e 1-my_list.py | tail -1").read()[-1]
-    '\n'
-
-    ---- Check for the file has a shebang ----
-    >>> os.popen("cat 1-my_list.py | head -1").read()
-    '#!/usr/bin/python3\n'
-
-    ---- Check that the README file exists ----
-    >>> cwd = os.getcwd()
-    >>> check_readme = cwd + '/README.md'
-    >>> os.path.exists(check_readme)
-    True
-
-##----Input tests----##
-
-	>>> my_list = MyList()
-
-	>>> my_list.print_sorted()
-	[]
-
-	>>> my_list.append(2)
-	>>> my_list.append(2)
-	>>> my_list.append(2)
-	>>> my_list.append(2)
-	>>> my_list.print_sorted()
-	[2, 2, 2, 2]
-
-	>>> my_list.append(1)
-	>>> my_list.print_sorted()
-	[1, 2, 2, 2, 2]
-
-	>>> my_list.append(10)
-	>>> my_list.print_sorted()
-	[1, 2, 2, 2, 2, 10]
-
-	>>> my_list.append(-11)
-	>>> my_list.print_sorted()
-	[-11, 1, 2, 2, 2, 2, 10]
-
-	>>> my_list
-	[2, 2, 2, 2, 1, 10, -11]
-
-	>>> my_list = [1, 4, 5, 6]
-	>>> my_list.print_sorted()
-	Traceback (most recent call last):
-        ...
-	AttributeError: 'list' object has no attribute 'print_sorted'
-	>>> my_list2 = MyList()
-	>>> my_list2.append(-2)
-	>>> my_list2.append(-5)
-	>>> my_list2.append(-3)
-	>>> my_list2.append(-20)
-	>>> my_list2.print_sorted()
-	[-20, -5, -3, -2]
-
-	>>> my_list2.append(2)
-	>>> my_list2.append(-50)
-	>>> my_list2.append(0)
-	>>> my_list2.append(0)
-	>>> my_list2.print_sorted()
-	[-50, -20, -5, -3, -2, 0, 0, 2]
-
-	>>> print(my_list2)
-	[-2, -5, -3, -20, 2, -50, 0, 0]
-
-	>>> my_list2.print_sorted(my_list2)
-	Traceback (most recent call last):
-	TypeError: print_sorted() takes 1 positional argument but 2 were given
-
-	>>> other = MyList()
-	>>> other.append(1)
-	>>> other.append(2)
-	>>> other.append(3)
-	>>> other.append(4)
-	>>> other.append(5)
-	>>> other.append(6)
-	>>> other.print_sorted()
-	[1, 2, 3, 4, 5, 6]
+st = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list) #check sort vs sorted
+[1, 4, 2, 3, 5]
+>>> my_list.append(-5)
+>>> my_list.append(0)
+>>> print(my_list)
+[1, 4, 2, 3, 5, -5, 0]
+>>> my_list.print_sorted()
+[-5, 0, 1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5, -5, 0]
