@@ -13,11 +13,8 @@ class Student():
     def to_json(self, attrs=None):
         if not attrs:
             return self.__dict__
+        new_dict = {}
         for i in attrs:
-            if type(i) is not str:
-                return self.__dict__
-        my_dict = {}
-        for i in attrs:
-            if i in self.__dict__:
-                my_dict[i] = self.__dict__.get(i)
-        return my_dict
+            if i in self.__dict__ and type(i) is str:
+                new_dict[i] = self.__dict__.get(i)
+        return new_dict
