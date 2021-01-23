@@ -49,6 +49,10 @@ class Rectangle(Base):
         self.validator('y', value)
         self.__y = value
 
+    def __str__(self):
+        return "[Rectangle] ({}) {}/{} - {}/{}".format\
+                (self.id, self.__x, self.__y, self.__width, self.__height)
+
     @staticmethod
     def validator(name, value):
         '''Validate if value is int and if it's more,
@@ -65,8 +69,18 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        '''prints in stdout the Rectangle instance with the character #'''
+        '''prints in stdout the Rectangle 
+        instance with the character # and taking
+        care of x and y'''
+        y_iterator = 0
+        while (y_iterator < self.__y):
+            print()
+            y_iterator += 1
         for i in range(0, self.__height):
+            x_iterator = 0
+            while (x_iterator < self.__x):
+                print(" ", end="")
+                x_iterator += 1
             for j in range(0, self.__width):
                 print('#', end="")
             print()
