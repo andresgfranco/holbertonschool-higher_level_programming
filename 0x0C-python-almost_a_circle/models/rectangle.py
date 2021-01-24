@@ -85,16 +85,20 @@ class Rectangle(Base):
                 print('#', end="")
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         '''Update the class Rectangle attributes'''
-        for i in range(0, len(args)):
-            if i == 0:
-                self.id = args[0]
-            elif i == 1:
-                self.__width = args[1]
-            elif i == 2:
-                self.__height = args[2]
-            elif i == 3:
-                self.__x = args[3]
-            elif i == 4:
-                self.__y = args[4]
+        if len(args) > 0:
+            for i in range(0, len(args)):
+                if i == 0:
+                    self.id = args[0]
+                elif i == 1:
+                    self.__width = args[1]
+                elif i == 2:
+                    self.__height = args[2]
+                elif i == 3:
+                    self.__x = args[3]
+                elif i == 4:
+                    self.__y = args[4]
+        else:
+            for key, value in kwargs.items():
+                self.__setattr__(key, value)
