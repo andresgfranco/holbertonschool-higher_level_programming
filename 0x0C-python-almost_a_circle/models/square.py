@@ -10,8 +10,8 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        return "[Square] ({}) {}/{} - {}".format\
-                (self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(
+            self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
@@ -42,6 +42,6 @@ class Square(Rectangle):
     def to_dictionary(self):
         '''Returns the dictionary representation
         of a square'''
-        new_dict = {'id': self.id, 'size': self.width, \
-                'x': self.x, 'y': self.y}
+        new_dict = {'id': self.id, 'size': self.width,
+                    'x': self.x, 'y': self.y}
         return new_dict

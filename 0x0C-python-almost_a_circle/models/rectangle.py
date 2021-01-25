@@ -14,11 +14,11 @@ class Rectangle(Base):
         super().__init__(id)
 
     @property
-    def width (self):
+    def width(self):
         return self.__width
 
     @width.setter
-    def width (self, value):
+    def width(self, value):
         self.validator("width", value)
         self.__width = value
 
@@ -50,8 +50,8 @@ class Rectangle(Base):
         self.__y = value
 
     def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format\
-                (self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
 
     @staticmethod
     def validator(name, value):
@@ -69,7 +69,7 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        '''prints in stdout the Rectangle 
+        '''prints in stdout the Rectangle
         instance with the character # and taking
         care of x and y'''
         y_iterator = 0
@@ -106,6 +106,6 @@ class Rectangle(Base):
     def to_dictionary(self):
         '''Returns the dictionary representation
         of a Rectangle'''
-        new_dict = {'id': self.id, 'width': self.__width, \
-                'height': self.__height, 'x': self.__x, 'y': self.__y}
+        new_dict = {'id': self.id, 'width': self.__width,
+                    'height': self.__height, 'x': self.__x, 'y': self.__y}
         return new_dict

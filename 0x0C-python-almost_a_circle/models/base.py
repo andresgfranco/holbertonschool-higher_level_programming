@@ -2,6 +2,7 @@
 '''Module for the class Base'''
 import json
 
+
 class Base():
     '''This class will be the "base" of all
     other classes in this project. It will manage
@@ -16,13 +17,13 @@ class Base():
         else:
             self.id = Base.__nb_objects + 1
             Base.__nb_objects = self.id
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         '''Returns the JSON string representation of
         list_dictionaries'''
 
-        if list_dictionaries == None or len(list_dictionaries) <= 0:
+        if list_dictionaries is None or len(list_dictionaries) <= 0:
                 return "[]"
 
         return json.dumps(list_dictionaries)
@@ -32,7 +33,7 @@ class Base():
         '''Returns the list of the JSON string
         representation json_string'''
 
-        if json_string == None or len(json_string) <= 0:
+        if json_string is None or len(json_string) <= 0:
             return []
 
         return json.loads(json_string)
@@ -42,7 +43,7 @@ class Base():
         '''writes the JSON string representation of
         list_objs to a file'''
 
-        if list_objs == None:
+        if list_objs is None:
             list_objs = []
         else:
             dict_list = []
@@ -82,4 +83,3 @@ class Base():
             list_instances.append(cls.create(**i))
 
         return list_instances
-
