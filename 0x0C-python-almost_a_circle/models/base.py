@@ -46,16 +46,16 @@ class Base():
         filename = "{}.json".format(cls.__name__)
 
         if list_objs is None:
-            with open(filename, 'w') as file_class:
-                file_class.write("[]")
+            dict_list = "[]"
         else:
             dict_list = []
+
             for i in range(0, len(list_objs)):
                 dict_list.append(list_objs[i].to_dictionary())
             dict_list = cls.to_json_string(dict_list)
 
-            with open(filename, 'w') as file_class:
-                file_class.write(dict_list)
+        with open(filename, 'w') as file_class:
+            file_class.write(dict_list)
 
     @classmethod
     def create(cls, **dictionary):
