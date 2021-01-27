@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''Module for the class Base'''
 import json
+import csv
 
 
 class Base():
@@ -83,3 +84,33 @@ class Base():
             list_instances.append(cls.create(**i))
 
         return list_instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        '''Serializes in CSV'''
+        filename = cls.__name__ + ".csv"
+        my_dict_list = []
+
+        if cls.__name__ == 'Rectangle':
+            attrs = ["id", "width", "height", 'x', 'y']
+        if cls.__name__ == "Square":
+            attrs = ["id", "size", 'x', 'y']
+        for my_objs in list_objs:
+            my_dict_list.append(cls.to_dictionary(my_objs))
+
+        with open(filename, 'w') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=attrs)
+            writer.writeheader()
+            writer.writerows(my_dict_list)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = cls.__name__ + ".csv"
+        my_dict_list = []
+
+        with open(filename, 'r') as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                res = {key: int(val) for key, val in row.items()}
+                my_dict_list.append(cls.create(**res))
+            return my_dict_list
