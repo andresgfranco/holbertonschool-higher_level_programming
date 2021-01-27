@@ -54,8 +54,8 @@ class Base():
                 dict_list.append(list_objs[i].to_dictionary())
                 dict_list = cls.to_json_string(dict_list)
 
-                with open(filename, 'w') as file_class:
-                    file_class.write(dict_list)
+            with open(filename, 'w') as file_class:
+                file_class.write(dict_list)
 
     @classmethod
     def create(cls, **dictionary):
