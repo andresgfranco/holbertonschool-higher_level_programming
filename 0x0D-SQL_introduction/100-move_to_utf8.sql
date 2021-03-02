@@ -11,7 +11,7 @@ ALTER TABLE
 
 ALTER TABLE
 	hbtn_0c_0.first_table
-	CHANGE name
+	MODIFY COLUMN name
 	VARCHAR(256)
 	CHARACTER SET utf8mb4
-	COLLATE utf8mb4_unicode_ci
+	COLLATE utf8mb4_unicode_ci;
