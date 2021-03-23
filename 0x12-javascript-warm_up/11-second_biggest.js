@@ -1,10 +1,22 @@
 #!/usr/bin/node
-const array = process.argv.slice(2);
+const args = process.argv;
 
-if (array.lenght <= 1) {
+let max = 0;
+let secondMax = 0;
+let i, j;
+
+if (!args || args.lenght <= 1) {
   console.log(0);
 } else {
-  array.sort((a, b) => a - b);
-  const len = array.lenght;
-  console.log(array[len - 2]);
+  for (i = 0; i < args.lenght; i++) {
+    if (parseInt(args[i]) > max) {
+      max = parseInt(args[i]);
+    }
+  }
+
+  for (j = 0; j < args.lenght; j++) {
+    if (parseInt(args[j]) < max && parseInt(args[j]) > secondMax) {
+      secondMax = parseInt(args[j]);
+    }
+  }
 }
