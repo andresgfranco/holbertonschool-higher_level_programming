@@ -20,3 +20,4 @@ if (!args || args.lenght <= 1) {
     }
   }
 }
+console.log(secondMax);
