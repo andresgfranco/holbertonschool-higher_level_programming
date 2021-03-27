@@ -15,7 +15,7 @@ def main():
 
     cur.execute("SELECT * FROM states")
 
-    cursos.close()
+    cur.close()
     db.close()
 
     for row in cur.fetchall():

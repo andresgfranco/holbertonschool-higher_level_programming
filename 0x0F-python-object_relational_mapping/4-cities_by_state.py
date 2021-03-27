@@ -20,7 +20,7 @@ def main():
     for row in cur.fetchall():
         print(row)
 
-    cursor.close()
+    cur.close()
     db.close()
 
 if __name__ == "__main__":
