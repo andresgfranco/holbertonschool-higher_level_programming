@@ -5,6 +5,7 @@ import sys
 
 
 def main():
+    """main function that lists all states from the database"""
     db = MySQLdb.connect(user=sys.argv[1],
             passwd=sys.argv[2],
             db=sys.argv[3],
