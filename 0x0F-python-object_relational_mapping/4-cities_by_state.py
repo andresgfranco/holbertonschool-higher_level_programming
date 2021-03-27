@@ -4,12 +4,13 @@ import MySQLdb
 import sys
 
 
-def main():
+if __name__ == "__main__":
+    """Function that lists all cities from the db"""
     db = MySQLdb.connect(user=sys.argv[1],
-            passwd=sys.argv[2],
-            db=sys.argv[3],
-            port=3306,
-            host="localhost")
+                         passwd=sys.argv[2],
+                         db=sys.argv[3],
+                         port=3306,
+                         host="localhost")
 
     cur = db.cursor()
 
@@ -22,7 +23,3 @@ def main():
 
     cur.close()
     db.close()
-
-if __name__ == "__main__":
-    main()
-
