@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""script that takes in an argument and displays all values in the states
-table of hbtn_0e_0_usa where name matches the argument"""
+""" script that takes in arguments and displays all values in the states
+table of hbtn_0e_0_usa where name matches the argument. But this time,
+write one that is safe from MySQL injections!"""
 import MySQLdb
 import sys
-
 
 def main():
     db = MySQLdb.connect(user=sys.argv[1],
@@ -14,7 +14,7 @@ def main():
 
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name = '{}'".format(sys.argv[4]))
+    cur.execute("SELECT * FROM states WHERE name = %s", (sys.argv[4], ))
 
     for row in cur.fetchall():
         print(row)
