@@ -15,11 +15,11 @@ def main():
 
     cur.execute("SELECT * FROM states")
 
-    cur.close()
-    db.close()
-
     for row in cur.fetchall():
         print(row[0], " ", row[1])
+
+    cur.close()
+    db.close()
 
 if __name__ == "__main__":
     main()
