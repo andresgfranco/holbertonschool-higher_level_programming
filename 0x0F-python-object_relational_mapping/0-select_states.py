@@ -7,10 +7,10 @@ import sys
 if __name__ == "__main__":
     """main function that lists all states from the database"""
     db = MySQLdb.connect(user=sys.argv[1],
-            passwd=sys.argv[2],
-            db=sys.argv[3],
-            port=3306,
-            host="localhost")
+                         passwd=sys.argv[2],
+                         db=sys.argv[3],
+                         port=3306,
+                         host="localhost")
 
     cur = db.cursor()
 
