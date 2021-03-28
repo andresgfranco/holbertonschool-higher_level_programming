@@ -32,6 +32,6 @@ if __name__ == "__main__":
 
     for states in query:
         session.delete(states)
-        session.commit()
 
+    session.commit()
     session.close()
