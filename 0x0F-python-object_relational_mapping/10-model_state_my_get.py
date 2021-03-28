@@ -14,7 +14,8 @@ if __name__ == "__main__":
         "port": "3306",
         "user": argv[1],
         "pass": argv[2],
-        "db": argv[3]}
+        "db": argv[3],
+        state_search: argv[4]}
 
     str_format = 'mysql+mysqldb://{user}:{pass}@{host}:{port}/{db}'
     engine = create_engine(str_format.format(
