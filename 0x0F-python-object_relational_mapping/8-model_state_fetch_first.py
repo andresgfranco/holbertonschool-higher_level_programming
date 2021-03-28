@@ -25,7 +25,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for states in session.query(State):
+    for states in session.query(State).order_by(State.id):
         if states:
             print("{}: {}".format(states.id, states.name))
             break
