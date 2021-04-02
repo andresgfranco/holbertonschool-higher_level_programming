@@ -8,7 +8,7 @@ from relationship_city import City
 from sqlalchemy import (create_engine)
 
 
-def main():
+if __name__ == "__main__":
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
@@ -30,7 +30,3 @@ def main():
             print("{}: {} -> {}".format(city.id, city.name, state.name))
 
     session.close()
-
-
-if __name__ == "__main__":
-    main()
