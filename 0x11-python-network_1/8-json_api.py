@@ -10,12 +10,12 @@ if __name__ == "__main__":
         print("No result")
         quit()
     letter = sys.argv[1]
-    req = requests.post(url, data={"q": letter})
 
     try:
+        req = requests.post(url, data={"q": letter})
         dict_req = req.json()
 
-        if dict_re = {}:
+        if dict_req = {}:
             print("No result")
         else:
             print("[{}] {}".format(dict_req.get("id"), dict_req.get("name")))
