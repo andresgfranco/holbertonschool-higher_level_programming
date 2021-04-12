@@ -6,13 +6,12 @@ import sys
 
 if __name__ == "__main__":
     url = "https://0.0.0.0:5000/search_user"
-    if len(sys.argv) == 1:
-        print("No result")
-        quit()
-    letter = sys.argv[1]
+    data = {"q": ""}
+    if len(sys.argv) == 2:
+        data["q"] = sys.argv[1]
 
     try:
-        req = requests.post(url, data={"q": letter})
+        req = requests.post(url, data=data)
         dict_req = req.json()
 
         if dict_req = {}:
