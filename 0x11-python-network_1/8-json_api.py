@@ -5,18 +5,19 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    url = "https://0.0.0.0:5000/search_user"
+    url = "http://0.0.0.0:5000/search_user"
     data = {"q": ""}
-    if len(sys.argv) == 2:
-        data["q"] = sys.argv[1]
-
+    if len(sys.argv) == 1:
+        print("No result")
+        quit()
+    data["q"] = sys.argv[1]
+    req = requests.post(url, data=data)
     try:
-        req = requests.post(url, data=data)
         dict_req = req.json()
-
+    except:
+        print("Not a valid JSON")
+    else:
         if dict_req == {}:
             print("No result")
         else:
             print("[{}] {}".format(dict_req.get("id"), dict_req.get("name")))
-    except:
-        print("Not a valid JSON")
