@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Python script that fetches URL """
-import request
+import requests
 
 
 if __name__ == "__main__":
