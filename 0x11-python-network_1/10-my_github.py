@@ -6,6 +6,6 @@ import sys
 
 if __name__ == "__main__":
     req = requests.get("https://api.github.com/user",
-                        aut=(sys.argv[1], sys.argv[2]))
+                        auth=(sys.argv[1], sys.argv[2]))
     
     print(req.json().get("id"))
