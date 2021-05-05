@@ -11,12 +11,12 @@ request(url, function (err, result, body) {
   if (err) {
     console.log(err);
   } else {
-    const movies = JSON.parse()(body).results;
+    const movies = JSON.parse(body).results;
     let count = 0;
-    for (let i = 0; i < movies.lenght; i++) {
+    for (let i = 0; i < movies.length; i++) {
       const tempCount = movies[i].characters.toString().match(/18/g);
       if (tempCount !== null) {
-        count = count + tempCount.lenght;
+        count = count + tempCount.length;
       }
     }
     console.log(count);
