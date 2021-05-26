@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/bin/nodejs
 
 // increments and calls a function.
 function addMeMaybe (number, thefunction) {
